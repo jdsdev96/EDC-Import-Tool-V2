@@ -1,6 +1,7 @@
 use std::time::Instant;
 
 
+
 fn done(error: bool) {
     if error {
         std::process::exit(-1);
@@ -11,6 +12,8 @@ fn done(error: bool) {
 
 
 fn main() {
-    let test = Instant::now();
-
+    let start = Instant::now();
+    let duration = start.elapsed();
+    println!("Execution time: {:?}", duration);
+    done(false);
 }
