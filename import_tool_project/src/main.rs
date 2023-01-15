@@ -1,7 +1,5 @@
 use std::time::Instant;
-use std::fs;
-use std::path::Path;
-
+mod dir_file;
 
 fn done(error: bool) {
     if error {
@@ -15,15 +13,13 @@ fn done(error: bool) {
 fn main() {
     let start = Instant::now();
     
-    let mut debug_file_exist = false;
+    let debug_file_exist = dir_file::does_file_exist(String::from("debug.txt"));
 
-    //gets all file names in working dir
-    let paths = fs::read_dir("./").unwrap();
-
-    //loops for dispplay
-    for path in paths {
-        println!("{}", path.unwrap().path().display());
+    if debug_file_exist {
+        println!("Debug Mode.")
     }
+    
+
 
     let duration = start.elapsed();
     println!("Execution time: {:?}", duration);
