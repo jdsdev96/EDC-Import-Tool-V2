@@ -17,6 +17,8 @@ fn main() {
 
     if debug_file_exist {
         println!("Debug Mode.")
+    } else {
+        println!("Production Mode.")
     }
     
 
