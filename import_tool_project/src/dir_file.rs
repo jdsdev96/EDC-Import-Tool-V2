@@ -10,7 +10,6 @@ pub fn does_file_exist(file_name: String) -> bool {
                 if &file_name == file {
                     return true;
                 } else {
-                    println!("{file}");
                     continue;
                 } 
             }
